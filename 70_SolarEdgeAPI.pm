@@ -285,7 +285,7 @@ sub SolarEdgeAPI_Timer_GetData($) {
                                                 localtime(time);
     
     if($interval eq "auto"){
-		if ($hour gt 6&& $hour lt 22) { $interval = 300;}
+		if ($hour > 6&& $hour < 22) { $interval = 300;}
 		else				 { $interval = 1200;}
     }
     
