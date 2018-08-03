@@ -199,12 +199,12 @@ sub SolarEdgeAPI_Attr(@) {
                 SolarEdgeAPI_Timer_GetData($hash);
 			}else {
                 Log3 $name, 3, "SolarEdgeAPI ($name) - interval too small, please use something >= 120 (sec), default is 300 (sec)";
-                return "interval too small, please use something >= 60 (sec), default is 300 (sec) daytime and 1200 (sec) nighttime";
+                return "interval too small, please use something >= 120 (sec), default is 300 (sec) daytime and 1200 (sec) nighttime";
             }
             
         } elsif( $cmd eq "del" ) {
             RemoveInternalTimer($hash);
-            $hash->{INTERVAL} = 300;
+            $hash->{INTERVAL} = 'auto';
             Log3 $name, 3, "SolarEdgeAPI ($name) - set interval to default";
             SolarEdgeAPI_Timer_GetData($hash);
         }
